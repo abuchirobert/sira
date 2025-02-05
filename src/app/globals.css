@@ -24,6 +24,7 @@
   --color-ring: hsl(215 20.2% 65.1%);
 
   --animate-marquee: marquee 30s linear infinite;
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
 
   @keyframes marquee {
     from {
@@ -31,6 +32,18 @@
     }
     to {
       transform: translateX(calc(-50% - var(--spacing) * var(--gap, 8) / 2));
+    }
+  }
+
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: "1";
+    }
+    20%,
+    50% {
+      opacity: "0";
     }
   }
 }
