@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const steps = [
   {
@@ -59,7 +60,9 @@ const GetInvolvedSection = () => {
               <div className="step-description">{description}</div>
             </div>
           ))}
-          <Button size="lg">Get Started</Button>
+          <Button size="lg" asChild>
+            <Link href="/auth/signup">Get Started</Link>
+          </Button>
         </div>
         <div className="image-wrapper">
           <img

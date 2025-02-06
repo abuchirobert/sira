@@ -41,7 +41,12 @@ const MobileNav = () => {
 
   return (
     <nav className="@sm:hidden flex gap-4">
-      <Button variant="ghost" size="icon" onClick={() => setState("enter")}>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="[&_svg]:size-8"
+        onClick={() => setState("enter")}
+      >
         <Menu />
       </Button>
 

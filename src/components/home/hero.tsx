@@ -1,6 +1,7 @@
 import React from "react";
 import { MousePointer2 } from "lucide-react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const summary = [
   { label: "Issues Fixed", value: "250 +" },
@@ -28,7 +29,9 @@ const HeroSection = () => {
             chair? Leaky faucet? Any faulty facility? Speak up! Your report
             today equals a better department tomorrow.
           </p>
-          <Button className="min-w-40">Get Started</Button>
+          <Button className="min-w-40" asChild>
+            <Link href="/auth/signup">Get Started</Link>
+          </Button>
 
           <div className="image-wrapper p-3 rounded-md bg-primary/30">
             <img
