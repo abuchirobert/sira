@@ -7,13 +7,15 @@ import { cn } from "@/lib/utils";
 
 const Header = () => {
   return (
-    <header className="p-4 md:px-8 bg-white border-b border-neutral-300">
+    <header className="@container p-4 md:px-8 bg-white border-b border-neutral-300">
       <div className="container mx-auto flex items-center justify-between">
-        <img
-          src="/images/logo.svg"
-          alt="Sira Logo"
-          className="logo max-md:w-16"
-        />
+        <Link href="/">
+          <img
+            src="/images/logo.svg"
+            alt="Sira Logo"
+            className="logo max-md:w-16"
+          />
+        </Link>
 
         <DesktopNav />
         <MobileNav />
@@ -23,8 +25,13 @@ const Header = () => {
 };
 
 const DesktopNav = () => (
+<<<<<<< HEAD
   <nav className="hidden sm:flex gap-4">
     <Button variant="ghost" asChild>
+=======
+  <nav className="hidden @sm:flex gap-4">
+    <Button variant="ghost" className="text-primary" asChild>
+>>>>>>> 8854f4b7d60c0c9a47cd2c4f67265ad5cd8e1ca6
       <Link href="/auth/login">Login</Link>
     </Button>
     <Button asChild>
@@ -38,8 +45,18 @@ const MobileNav = () => {
   const [state, setState] = useState<"enter" | "exiting" | "exit">("exit");
 
   return (
+<<<<<<< HEAD
     <nav className="sm:hidden flex gap-4">
       <Button variant="ghost" size="icon" onClick={() => setState("enter")}>
+=======
+    <nav className="@sm:hidden flex gap-4">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="[&_svg]:size-8"
+        onClick={() => setState("enter")}
+      >
+>>>>>>> 8854f4b7d60c0c9a47cd2c4f67265ad5cd8e1ca6
         <Menu />
       </Button>
 
@@ -81,7 +98,11 @@ const MobileNav = () => {
               </Link>
             </li>
             <li>
+<<<<<<< HEAD
               <Button variant="ghost" className="w-full" asChild>
+=======
+              <Button variant="ghost" className="w-full text-primary" asChild>
+>>>>>>> 8854f4b7d60c0c9a47cd2c4f67265ad5cd8e1ca6
                 <Link href="/auth/login">Login</Link>
               </Button>
             </li>

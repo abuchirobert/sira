@@ -43,8 +43,8 @@ const Testimonials = () => {
   return (
     <section>
       <h2 className="text-2xl font-semibold text-center mb-2">Testimonials</h2>
-      <div className="testimonials md:mx-20 overflow-auto md:overflow-hidden py-2">
-        <div className="md:animate-marquee flex w-fit gap-8">
+      <div className="testimonials md:mx-20 md:overflow-hidden py-2">
+        <div className="md:animate-marquee flex items-center flex-col md:flex-row md:w-fit gap-8">
           {testimonials.map((testimonial) => (
             <Testimonial
               key={testimonial.name + testimonial.level}

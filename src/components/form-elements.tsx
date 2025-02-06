@@ -10,7 +10,14 @@ import {
 } from "./ui/form";
 import { useForm, ControllerRenderProps, FieldValues } from "react-hook-form";
 import { cn } from "@/lib/utils";
-import { File, Image as ImageIcon, Trash2, UploadCloud } from "lucide-react";
+import {
+  Eye,
+  EyeOff,
+  File,
+  Image as ImageIcon,
+  Trash2,
+  UploadCloud,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import {
   Select,
@@ -179,6 +186,36 @@ export const TextareaFieldControl: React.FC<FieldControl> = ({
   );
 };
 
+export const PasswordFieldControl: React.FC<FieldControl> = ({
+  // form,
+  field,
+  input,
+}) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  return (
+    <div className="relative">
+      <Input
+        type={showPassword ? "text" : "password"}
+        placeholder={input.placeholder}
+        {...field}
+        value={field.value ?? ""}
+        className={cn(input.classes?.input)}
+        {...input.inputProps}
+      />
+
+      <Button
+        variant="ghost"
+        size="icon"
+        className="absolute top-1/2 right-0 -translate-y-1/2 [&_svg]:size-5"
+        onClick={() => setShowPassword((prev) => !prev)}
+        type="button"
+      >
+        {showPassword ? <EyeOff /> : <Eye />}
+      </Button>
+    </div>
+  );
+};
 export const DefaultFieldControl: React.FC<FieldControl> = ({
   // form,
   field,
@@ -200,6 +237,7 @@ const controlMapping: Record<string, React.FC<FieldControl>> = {
   file: FileFieldControl,
   select: SelectFieldControl,
   textarea: TextareaFieldControl,
+  password: PasswordFieldControl,
   text: DefaultFieldControl,
 };
 
