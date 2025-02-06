@@ -6,7 +6,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <div className="flex">
+    <div className="flex h-screen">
       <DashboardSidebar />
       <div className="grow flex flex-col overflow-y-auto min-h-screen">
         <DashboardHeader />

@@ -26,4 +26,10 @@ const DashboardHeader = () => {
   );
 };
 
+export const SubHeader: React.FC<{ title: React.ReactNode }> = ({ title }) => (
+  <div className="report-header bg-primary text-white p-4 text-center text-lg font-semibold -mx-4 md:-mx-8 -mt-4 md:-mt-8">
+    {title}
+  </div>
+);
+
 export default DashboardHeader;

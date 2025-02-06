@@ -1,35 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Activity,
-  ClipboardPlus,
-  Home,
-  LogOut,
-  Menu,
-  Moon,
-  SquarePen,
-  Sun,
-} from "lucide-react";
+import { LogOut, Menu, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Switch, SwitchThumb } from "@radix-ui/react-switch";
 import { Button } from "../ui/button";
-
-const navLinks = [
-  { name: "Home", href: "/dashboard", icon: <Home /> },
-  {
-    name: "Submitted reports",
-    href: "/dashboard/reports",
-    icon: <ClipboardPlus />,
-  },
-  { name: "Drafts", href: "/dashboard/drafts", icon: <SquarePen /> },
-  {
-    name: "Recent activities",
-    href: "/dashboard/activities",
-    icon: <Activity />,
-  },
-];
+import { dashboardLinks } from "@/components/links";
 
 const DashboardSidebar = () => (
   <>
@@ -52,7 +29,7 @@ const DesktopSidebar = () => {
       </Link>
 
       <ul>
-        {navLinks.map(({ name, href, icon }) => (
+        {dashboardLinks.map(({ name, href, icon }) => (
           <li key={name + href}>
             <Link
               href={href}
@@ -123,7 +100,7 @@ const MobileSidebar = () => {
           />
         </Link>
         <ul>
-          {navLinks.map(({ name, href, icon }) => (
+          {dashboardLinks.map(({ name, href, icon }) => (
             <li key={name + href}>
               <Link
                 href={href}
