@@ -116,7 +116,7 @@ const Signup = () => {
               {step !== 1 && (
                 <Button
                   variant="ghost"
-                  className="self-start mt-2"
+                  className="self-start mt-2 text-primary"
                   onClick={() => setStep(step - 1)}
                 >
                   Go back

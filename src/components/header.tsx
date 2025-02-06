@@ -26,7 +26,7 @@ const Header = () => {
 
 const DesktopNav = () => (
   <nav className="hidden @sm:flex gap-4">
-    <Button variant="ghost" asChild>
+    <Button variant="ghost" className="text-primary" asChild>
       <Link href="/auth/login">Login</Link>
     </Button>
     <Button asChild>
@@ -83,7 +83,7 @@ const MobileNav = () => {
               </Link>
             </li>
             <li>
-              <Button variant="ghost" className="w-full" asChild>
+              <Button variant="ghost" className="w-full text-primary" asChild>
                 <Link href="/auth/login">Login</Link>
               </Button>
             </li>
