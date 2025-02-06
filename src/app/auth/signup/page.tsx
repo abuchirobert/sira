@@ -98,7 +98,7 @@ const Signup = () => {
                     input={{
                       name: "level",
                       label: "Level",
-                      placeholder: "100L",
+                      placeholder: "100",
                     }}
                   />
                 </>
